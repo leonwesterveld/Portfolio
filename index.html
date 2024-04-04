@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,9 +7,13 @@
         <link rel="stylesheet" href="assets/css/style.css" />
         <script src="assets/js/main.js" defer></script>
         <link rel="preload" href="assets/img/tekst.png" as="image" />
-        <link rel="preload" href="assets/img/portfolio.png" as="image" />
     </head>
     <body>
+        <div id="mouse"><div id="inner"></div></div>
+        <section class="menu">
+            <button class="hover" id="taal">NE</button>
+            <button class="hover" id="darkmode">☼</button>
+        </section>
         <main>
             <img
                 id="naam"
@@ -17,15 +21,15 @@
                 src="assets/img/tekst.gif"
                 alt="My Image"
             />
-            <p class="info">
-                Software Developer, UI/XD Designer, Immersive Designer
-            </p>
+            <div class="text">
+                <p class="info hover knop">Software Developer</p>
+                <span class="info">, </span>
+                <p class="info hover knop">UI/XD Designer</p>
+                <span class="info">, </span>
+                <p class="info hover knop">Immersive Designer</p>
+            </div>
 
-            <section class="menu">
-                <button class="taal">EN</button>
-                <button class="darkmode">☼</button>
-            </section>
-            
+    
         </main>
     </body>
 </html>
