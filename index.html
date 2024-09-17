@@ -6,15 +6,20 @@
         <title>Portfolio Leon Westerveld</title>
         <link rel="stylesheet" href="assets/css/style.css" />
         <script src="assets/js/main.js" defer></script>
+        <script src="assets/js/mouse.js" defer></script>
+        <script src="assets/js/tabs.js" defer></script>
+        <script src="assets/js/modes.js" defer></script>
         <link rel="preload" href="assets/img/tekst.png" as="image" />
     </head>
     <body>
-        <div id="mouse"><div id="inner"></div></div>
-        <section class="menu">
-            <button class="hover" id="taal">NE</button>
-            <button class="hover" id="darkmode">☼</button>
-        </section>
-        <main>
+        <div id="mouse"><div class="invert" id="inner"></div></div>
+        <div class="color invert"></div>
+        <header class="menu">
+            <button class="hover invert" id="taal">NE</button>
+            <button class="hover invert" id="darkmode">☼</button>
+            <button class="hover invert" id="home">🏠︎</button>
+        </header>
+        <main id="homepage" class="invert">
             <img
                 id="naam"
                 class="naam"
@@ -22,14 +27,36 @@
                 alt="My Image"
             />
             <div class="text">
-                <p class="info hover knop">Software Developer</p>
-                <span class="info">, </span>
-                <p class="info hover knop">UI/XD Designer</p>
-                <span class="info">, </span>
-                <p class="info hover knop">Immersive Designer</p>
+                <p class="info">Software developer, UI/XD Designer, Immersive Designer</p>
             </div>
+            <div class="text">
+                <button id="button__projects" class="info hover bottom knop">Projects</button>
+                <span class="info">, </span>
+                <button id="button__about" class="info hover bottom knop">About me</button>
+                <span class="info">, </span>
+                <button id="button__contact" class="info hover bottom knop">Contact me</button>
+            </div>
+        </main>
 
-    
+        <main id="projects">
+            <section class="title invert">
+                <h2>My projects</h2>
+                <p>Click on the buttons inside the tabbed menu:</p>
+            </section>
+            
+            <section class="tabs">
+                <div class="tab invert" id="tab-buttons"></div>
+                <div id="tab-content"></div>
+            </section>
+
+        </main>
+
+        <main id="about">
+            <h2>Leon Westerveld</h2>
+        </main>
+
+        <main id="contact">
+            contact
         </main>
     </body>
 </html>

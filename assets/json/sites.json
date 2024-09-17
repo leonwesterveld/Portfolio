@@ -1,0 +1,85 @@
+{
+    "tabs": [
+      {
+        "id": "css",
+        "title": "CSS",
+        "content": [
+          {
+            "subtitle": "Introduction to CSS",
+            "text": "CSS is used to style HTML content.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
+          },
+          {
+            "subtitle": "CSS Selectors",
+            "text": "CSS selectors are used to target HTML elements.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS_Property.png/640px-CSS_Property.png"
+          }
+        ]
+      },
+      {
+        "id": "js",
+        "title": "JavaScript",
+        "content": [
+          {
+            "subtitle": "What is JavaScript?",
+            "text": "JavaScript is a programming language for the web.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+          },
+          {
+            "subtitle": "JavaScript Functions",
+            "text": "Functions are one of the fundamental building blocks in JavaScript.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/9/99/Functions_JavaScript.png"
+          }
+        ]
+      },
+      {
+        "id": "php",
+        "title": "PHP",
+        "content": [
+          {
+            "subtitle": "Introduction to PHP",
+            "text": "PHP is a server-side scripting language.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg"
+          },
+          {
+            "subtitle": "PHP and Databases",
+            "text": "PHP can be used to interact with databases like MySQL.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/d/dd/MySQL_logo.svg"
+          }
+        ]
+      },
+      {
+        "id": "immersive",
+        "title": "Immersive",
+        "content": [
+          {
+            "subtitle": "Virtual Reality",
+            "text": "Virtual reality provides an immersive digital experience.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/9/97/VirtualRealityHeadset.jpg"
+          },
+          {
+            "subtitle": "Augmented Reality",
+            "text": "Augmented reality blends the digital and physical worlds.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/Google_Glass_Explorer_Edition.jpg"
+          }
+        ]
+      },
+      {
+        "id": "wordpress",
+        "title": "wordpress",
+        "content": [
+          {
+            "subtitle": "website",
+            "text": "Virtual reality provides an immersive digital experience.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/9/97/VirtualRealityHeadset.jpg"
+          },
+          {
+            "subtitle": "Augmented Reality",
+            "text": "Augmented reality blends the digital and physical worlds.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/Google_Glass_Explorer_Edition.jpg"
+          }
+        ]
+      }
+    ]
+  }
+  
