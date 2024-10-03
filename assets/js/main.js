@@ -1,7 +1,7 @@
 window.onload = function () {
     let img = document.getElementById("naam");
     setTimeout(() => {
-        img.src = "assets/img/tekst.png";
+        img.src = "/assets/img/tekst.png";
     }, 1900);
 
     applyHoverEffects();
@@ -75,4 +75,28 @@ home_button.addEventListener("click", () => {
         }
     });
     pressed = false;
+});
+
+
+document.getElementById('mailtoButton').addEventListener('click', function(event) {
+    event.preventDefault();
+
+    // Get form values
+    const about = document.getElementById('About').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    // Validate form fields
+    if (about === "" || email === "" || message === "") {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    // Create the mailto link
+    const subject = encodeURIComponent(about);
+    const body = encodeURIComponent(`${message}`);
+    const mailtoLink = `mailto:leonwesterveld12@gmail.com?subject=${subject}&body=${body}`;
+
+    // Open the user's email client
+    window.location.href = mailtoLink;
 });

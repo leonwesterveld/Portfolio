@@ -5,8 +5,8 @@ const invertElements = document.getElementsByClassName("invert");
 
 function applyDarkMode(darkMode) {
     document.body.style.backgroundImage = darkMode
-        ? "url('assets/img/portfoliodark.png')"
-        : "url('assets/img/portfolio.png')";
+        ? "url('/assets/img/portfoliodark.png')"
+        : "url('/assets/img/portfolio.png')";
         for (let i = 0; i < invertElements.length; i++) {
             invertElements[i].style.filter = darkMode ? "invert(100%)" : "invert(0%)";
         }

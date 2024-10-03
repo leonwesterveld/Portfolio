@@ -14,6 +14,7 @@ html {
     /* font-family: Viner Hand ITC; */
     font-family: Tw Cen MT;
     transition: filter 0.5s ease;
+    cursor: none;
 }
 
 a {
@@ -22,7 +23,7 @@ a {
 }
 
 button:hover {
-    cursor: pointer;
+    cursor: none;
 }
 
 li {
@@ -36,7 +37,7 @@ li {
 body {
     height: 100vh;
     width: 100vw;
-    background-image: url(../img/portfolio.png);
+    background-image: url(../img/tekst.gif);
     background-size: 100vw 100vh;
     display: flex;
     flex-direction: column;
@@ -48,9 +49,9 @@ body {
     background: radial-gradient(circle, #ffffff00 10%, #ff52521f 100%);
     content: "";
     display: block;
-    height: 100%;
+    min-height: 100%;
     position: absolute;
-    width: 100%;
+    min-width: 100%;
     z-index: 0;
 }
 
@@ -64,11 +65,11 @@ body {
     filter: invert(100%);
     mix-blend-mode: difference;
     transform: translate(-50%, -50%) scale(1);
-    border: #2f2f2f solid 0.15rem;
+    border: #2b2b2b solid 0.15rem;
     pointer-events: none;
     border-radius: 50%;
-    transition: transform 0.2s, opacity 0.2s, background 0.2s, left 0.1s,
-        top 0.1s;
+    transition: transform 0.2s, opacity 0.2s, background 0.2s, left 0.01s,
+        top 0.01s;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,7 +80,7 @@ body {
     height: 0.2rem;
     width: 0.2rem;
     border-radius: 50%;
-    background: #2f2f2f;
+    background: #2b2b2b;
     transition: opacity 0.2s, transform 0.2s;
 }
 
@@ -176,7 +177,7 @@ body {
 
 .bottom:hover {
     border-bottom: black solid 1px;
-    cursor: pointer;
+    
 }
 
 #contact,
@@ -187,7 +188,7 @@ body {
     align-items: center;
     opacity: 0;
     filter: blur(20rem);
-    transition: opacity 1s ease, filter 1s ease;
+    transition: opacity .6s ease, filter .6s ease;
     z-index: 2;
     padding: 4rem;
     height: inherit; 
@@ -220,7 +221,7 @@ h2{
 .tab button {
     float: left;
     border: none;
-    cursor: pointer;
+    
     padding: 1.5rem 1.5rem;
     transition: 0.3s;
     font-size: 2rem;
@@ -246,8 +247,94 @@ h2{
 
 /* about */
 #about {
+    justify-content: center;
 }
 
-/* contact */
+
+
+
+/* contact page */
 #contact {
+    justify-content: center;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    transition: 0.3s ease;
+}
+
+.contact-container:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+
+.contact-form label {
+    font-size: 2rem;
+    color: #0000009e;
+}
+
+.contact-form input, .contact-form textarea {
+    font-size: 1.6rem;
+    padding: 1rem;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.5rem;
+    width: 100%;
+    transition: 0.2s ease;
+    resize: none;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: #000000;
+    outline: none;
+}
+
+.contact-form button {
+    font-size: 2rem;
+    padding: 1rem;
+    background-color: #ff5252;
+    border: none;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #ff3333;
+}
+
+.social-links {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.social-links h3 {
+    font-size: 2rem;
+    color: #0000009e;
+}
+
+.social-links a {
+    margin: 0 1rem;
+    display: inline-block;
+}
+
+.social-links img {
+    transition: transform 0.3s ease;
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
 }
