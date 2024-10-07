@@ -294,6 +294,7 @@ h2{
     width: 100%;
     transition: 0.2s ease;
     resize: none;
+    cursor: none;
 }
 
 .contact-form input:focus, .contact-form textarea:focus {
@@ -308,7 +309,6 @@ h2{
     border: none;
     color: white;
     border-radius: 0.5rem;
-    cursor: pointer;
     transition: 0.3s ease;
 }
 
@@ -337,4 +337,5 @@ h2{
 
 .social-links img:hover {
     transform: scale(1.1);
+    cursor: none;
 }

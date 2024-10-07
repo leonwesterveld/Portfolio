@@ -7,7 +7,6 @@ window.onload = function () {
     applyHoverEffects();
 };
 
-
 const knop = document.querySelectorAll(".knop");
 
 const projects = document.getElementById("projects");
@@ -18,8 +17,6 @@ const button__about = document.getElementById("button__about");
 const button__contact = document.getElementById("button__contact");
 const home_button = document.getElementById("home");
 let pressed = false;
-
-
 
 for (let i = 0; i < knop.length; i++) {
     knop[i].addEventListener("click", () => {
@@ -55,7 +52,7 @@ for (let i = 0; i < knop.length; i++) {
 }
 home_button.addEventListener("click", () => {
     const home = document.getElementById("homepage");
-    
+
     setTimeout(() => {
         home.style.display = "flex";
     }, 600);
@@ -63,9 +60,9 @@ home_button.addEventListener("click", () => {
         home.style.filter = darkMode ? "invert(100%)" : "invert(0%)";
         home.style.opacity = "1";
     }, 610);
-    
+
     const sections = [projects, about, contact];
-    sections.forEach(section => {
+    sections.forEach((section) => {
         if (section) {
             section.style.filter = "blur(20rem)";
             section.style.opacity = "0";
@@ -77,26 +74,28 @@ home_button.addEventListener("click", () => {
     pressed = false;
 });
 
+document
+    .getElementById("contactForm")
+    .addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission
 
-document.getElementById('mailtoButton').addEventListener('click', function(event) {
-    event.preventDefault();
+        // Get form data
+        const formData = new FormData(this);
 
-    // Get form values
-    const about = document.getElementById('About').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-
-    // Validate form fields
-    if (about === "" || email === "" || message === "") {
-        alert("Please fill in all fields.");
-        return;
-    }
-
-    // Create the mailto link
-    const subject = encodeURIComponent(about);
-    const body = encodeURIComponent(`${message}`);
-    const mailtoLink = `mailto:leonwesterveld12@gmail.com?subject=${subject}&body=${body}`;
-
-    // Open the user's email client
-    window.location.href = mailtoLink;
-});
+        // Send form data to PHP script using fetch
+        fetch("send_mail.php", {
+            method: "POST",
+            body: formData,
+        })
+            .then((response) => response.text())
+            .then((data) => {
+                // Show success or error message
+                alert(data);
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+                alert(
+                    "There was a problem sending your message. Please try again."
+                );
+            });
+    });

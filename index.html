@@ -66,16 +66,20 @@
         <main id="contact" class="invert">
             <div class="contact-container">
                 <h2>Contact me</h2>
-                <form class="contact-form" id="contactForm">
+                <form class="contact-form" id="contactForm" action="send_mail.php" method="POST">
                     <div>
-                        <label for="about">About</label>
-                        <input type="text" id="About" required placeholder="About">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your name">
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="Your email">
                     </div>
                     <div>
                         <label for="message">Message</label>
-                        <textarea id="message" rows="5" required placeholder="Your message"></textarea>
+                        <textarea id="message" name="message" rows="5" required placeholder="Your message"></textarea>
                     </div>
-                    <button type="submit" id="mailtoButton">Send Message</button>
+                    <button type="submit">Send Message</button>
                 </form>
         
                 <div class="social-links">
