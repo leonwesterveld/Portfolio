@@ -11,77 +11,37 @@ html {
     scroll-behavior: smooth;
     font-weight: 600;
     color: #0000009e;
-    /* font-family: Viner Hand ITC; */
     font-family: Tw Cen MT;
     transition: filter 0.5s ease;
-    cursor: none;
 }
 
 a {
     text-decoration: none;
     color: #000000;
+    cursor: pointer;
 }
 
-button:hover {
-    cursor: none;
-}
 
 li {
     list-style: none;
 }
 
-.invert{
-    transition: filter .1s;
+.invert {
+    transition: filter 0.1s;
 }
 
 body {
-    height: 100vh;
-    width: 100vw;
-    background-image: url(../img/tekst.gif);
-    background-size: 100vw 100vh;
+    min-height: 100vh;
+    width: 100%;
+    background-size: 100% 100%;
     display: flex;
     flex-direction: column;
     position: relative;
-    transition: background-image .2s ease;
+    transition: background-image 0.2s ease;
 }
 
-.color {
-    background: radial-gradient(circle, #ffffff00 10%, #ff52521f 100%);
-    content: "";
-    display: block;
-    min-height: 100%;
-    position: absolute;
-    min-width: 100%;
-    z-index: 0;
-}
-
-/* mouse */
-#mouse {
-    z-index: 2;
-    position: fixed;
-    top: -10rem;
-    width: 1.5rem;
-    height: 1.5rem;
-    filter: invert(100%);
-    mix-blend-mode: difference;
-    transform: translate(-50%, -50%) scale(1);
-    border: #2b2b2b solid 0.15rem;
-    pointer-events: none;
-    border-radius: 50%;
-    transition: transform 0.2s, opacity 0.2s, background 0.2s, left 0.01s,
-        top 0.01s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 5;
-}
-
-#inner {
-    height: 0.2rem;
-    width: 0.2rem;
-    border-radius: 50%;
-    background: #2b2b2b;
-    transition: opacity 0.2s, transform 0.2s;
+button:hover{
+    cursor: pointer;
 }
 
 /* header */
@@ -107,15 +67,11 @@ body {
 #darkmode {
     height: 4rem;
     width: 4rem;
-    animation-name: spin;
-    animation-duration: 1.5s;
+    animation: spin 1.5s;
 }
 
 @keyframes popup {
-    0% {
-        opacity: 0;
-        transform: translateY(5rem);
-    }
+    0%,
     30% {
         opacity: 0;
         transform: translateY(5rem);
@@ -141,7 +97,7 @@ body {
     font-size: 4rem;
     color: black;
     display: flex;
-    height: inherit;
+    min-height: 100vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -166,9 +122,7 @@ body {
     font-weight: 400;
     font-size: 3rem;
     color: #00000097;
-    animation-name: popup;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
+    animation: popup 2s forwards;
     border: none;
     border-bottom: #00000000 solid 1px;
     transition: 0.1s;
@@ -177,52 +131,55 @@ body {
 
 .bottom:hover {
     border-bottom: black solid 1px;
-    
 }
 
 #contact,
 #about,
 #projects {
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    opacity: 0;
+    opacity: 1;
     filter: blur(20rem);
-    transition: opacity .6s ease, filter .6s ease;
+    transition: opacity 0.6s ease, filter 0.6s ease;
     z-index: 2;
     padding: 4rem;
-    height: inherit; 
+    height: inherit;
 }
 
 /* projects */
 #projects {
     gap: 10rem;
-    height: inherit; 
+    height: inherit;
+    filter: invert(0%);
 }
 
-
-h2{
+h2 {
     font-size: 3rem;
 }
 
-.tabs{
+.tabs {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 2rem;
 }
 
 .tab {
     overflow: hidden;
-    border: .1rem solid #ccc;
+    border: 0.1rem solid #ccc;
     background-color: #f1f1f1;
+}
+
+.tab:first-child{
+    background: #ccc;
 }
 
 .tab button {
     float: left;
     border: none;
-    
-    padding: 1.5rem 1.5rem;
+    padding: 1.5rem;
     transition: 0.3s;
     font-size: 2rem;
 }
@@ -237,25 +194,76 @@ h2{
 
 .tabcontent {
     display: none;
-    padding: 0.5rem 1rem;
+    justify-content: center;
+    padding: 1rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    overflow-y: auto;
+    height: 27rem;
 }
 
-.tablinks{
+.tabcontent:first-of-type{
+    display: flex;
+    opacity: 1;
+}
+
+.tabcontent::-webkit-scrollbar {
+    width: 8px;
+}
+
+.tabcontent::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 1rem;
+}
+
+.tabcontent::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 1rem;
+}
+
+.tabcontent::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+@media (max-width: 768px) {
+    .tabcontent {
+        padding: 0.5rem;
+        gap: 1rem;
+    }
+}
+
+.tabcontent.show {
+    opacity: 1;
+}
+
+.tablinks {
     font-family: Tw Cen MT;
 }
 
-
-/* about */
-#about {
-    justify-content: center;
+.sub-section {
+    width: 32rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
+.sub-section h4 {
+    font-size: 2.5rem;
+}
 
+.sub-section p {
+    font-size: 1.5rem;
+}
 
-
-/* contact page */
+/* about */
+#about,
 #contact {
     justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .contact-container {
@@ -286,7 +294,8 @@ h2{
     color: #0000009e;
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
     font-size: 1.6rem;
     padding: 1rem;
     border: 0.1rem solid #ccc;
@@ -294,10 +303,10 @@ h2{
     width: 100%;
     transition: 0.2s ease;
     resize: none;
-    cursor: none;
 }
 
-.contact-form input:focus, .contact-form textarea:focus {
+.contact-form input:focus,
+.contact-form textarea:focus {
     border-color: #000000;
     outline: none;
 }
@@ -337,5 +346,332 @@ h2{
 
 .social-links img:hover {
     transform: scale(1.1);
-    cursor: none;
+}
+
+/* About Me Section */
+#about {
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    opacity: 1;
+    filter: blur(20rem);
+    transition: opacity 0.8s ease, filter 0.8s ease, transform 0.8s ease;
+}
+
+/* Creative fade-in and translate effect */
+#about.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+#about h2 {
+    font-size: 3rem;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+    filter: invert(100%);
+    transition: filter 0.3s;
+}
+
+#about h2::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0.3rem;
+    background-color: #007bff;
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.4s ease;
+    font-weight: 500;
+}
+
+#about h2:hover::after {
+    width: 100%;
+}
+
+#about p {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: white;
+    font-weight: 200;
+    width: 80rem;
+    filter: invert(100%);
+    transition: filter 0.3s;
+}
+
+#about h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    color: white;
+    filter: invert(100%);
+    transition: filter 0.3s;
+    position: relative;
+}
+
+#about h3::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 0.2rem;
+    background-color: #ff5252;
+    position: absolute;
+    bottom: -0.3rem;
+    left: 0;
+    transition: width 0.4s ease;
+}
+
+#about h3:hover::after {
+    width: 100%;
+}
+
+#about ul {
+    list-style: none;
+    padding: 0;
+}
+
+#about li {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: black;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Mobile Devices (Portrait and smaller than 600px) */
+@media (max-width: 600px) {
+    html {
+        font-size: 55%; /* Smaller base font size */
+    }
+
+    .menu {
+        top: 2rem;
+        right: 2rem;
+        gap: 1rem;
+    }
+
+    #darkmode,
+    #taal,
+    #home {
+        font-size: 2rem; /* Smaller button size */
+    }
+
+    #homepage {
+        font-size: 3rem;
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .naam {
+        height: 5rem;
+        width: 100%; /* Adjust image width */
+    }
+
+    .info {
+        font-size: 2rem; /* Reduce text size */
+    }
+
+    #projects {
+        gap: 5rem;
+    }
+
+    h2 {
+        font-size: 2rem; /* Smaller heading size */
+    }
+
+    .sub-section {
+        width: 100%; /* Full-width sections */
+        padding: 1rem;
+    }
+
+    .sub-section h4 {
+        font-size: 2rem;
+    }
+
+    .sub-section p {
+        font-size: 1.2rem; /* Smaller paragraph size */
+    }
+
+    .contact-container {
+        width: 80%; /* Narrower contact form */
+    }
+
+    .contact-form label {
+        font-size: 1.6rem; /* Reduce label size */
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 1.4rem;
+        padding: 0.8rem;
+    }
+
+    .contact-form button {
+        font-size: 1.6rem;
+    }
+
+    .social-links h3 {
+        font-size: 1.8rem; /* Smaller social link headers */
+    }
+}
+
+/* Tablet Devices (600px to 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    html {
+        font-size: 60%;
+    }
+
+    .menu {
+        top: 3rem;
+        right: 5rem;
+        gap: 2rem;
+    }
+
+    #darkmode,
+    #taal,
+    #home {
+        font-size: 2.5rem;
+    }
+
+    #homepage {
+        font-size: 3.5rem;
+        gap: 3rem;
+        padding: 3rem;
+    }
+
+    .naam {
+        height: 6rem;
+        width: 80%; /* Smaller than desktop */
+    }
+
+    .info {
+        font-size: 2.5rem;
+    }
+
+    #projects {
+        gap: 7rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .sub-section {
+        width: 48%; /* Half-width sections */
+        padding: 1rem;
+    }
+
+    .sub-section h4 {
+        font-size: 2.2rem;
+    }
+
+    .sub-section p {
+        font-size: 1.4rem;
+    }
+
+    .contact-container {
+        width: 60%; /* Medium-width form */
+    }
+
+    .contact-form label {
+        font-size: 1.8rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 1.5rem;
+        padding: 0.9rem;
+    }
+
+    .contact-form button {
+        font-size: 1.8rem;
+    }
+
+    .social-links h3 {
+        font-size: 2rem;
+    }
+}
+
+/* Desktop Devices (Wider than 1024px) */
+@media (min-width: 1025px) {
+    html {
+        font-size: 62.5%; /* Default base size */
+    }
+
+    .menu {
+        top: 4rem;
+        right: 10rem;
+        gap: 3rem;
+    }
+
+    #darkmode,
+    #taal,
+    #home {
+        font-size: 3rem; /* Larger button size */
+    }
+
+    #homepage {
+        font-size: 4rem;
+        gap: 4rem;
+        padding: 4rem;
+    }
+
+    .naam {
+        height: 7rem;
+        width: 56rem; /* Full width for desktop */
+    }
+
+    .info {
+        font-size: 3rem;
+    }
+
+    #projects {
+        gap: 10rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    .sub-section {
+        width: 32rem;
+        padding: 1rem;
+    }
+
+    .sub-section h4 {
+        font-size: 2.5rem;
+    }
+
+    .sub-section p {
+        font-size: 1.5rem;
+    }
+
+    .contact-container {
+        width: 50%;
+    }
+
+    .contact-form label {
+        font-size: 2rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 1.6rem;
+        padding: 1rem;
+    }
+
+    .contact-form button {
+        font-size: 2rem;
+    }
+
+    .social-links h3 {
+        font-size: 2.5rem;
+    }
 }

@@ -4,7 +4,6 @@ window.onload = function () {
         img.src = "/assets/img/tekst.png";
     }, 1900);
 
-    applyHoverEffects();
 };
 
 const knop = document.querySelectorAll(".knop");
@@ -34,20 +33,32 @@ for (let i = 0; i < knop.length; i++) {
             if (knop[i] === button__projects) {
                 main = projects;
                 createTabs();
+                setTimeout(() => {
+                    main.style.filter = "blur(0)";
+                    main.style.opacity = "1";
+                }, 610);
+                window.location.href = 'projects.html';
             } else if (knop[i] === button__about) {
                 main = about;
+                setTimeout(() => {
+                    main.style.filter = darkMode ? "invert(100%)" : "invert(0%)" + " blur(0)";
+                    main.style.opacity = "1";
+                }, 610);
+                window.location.href = 'about.html';
             } else if (knop[i] === button__contact) {
                 main = contact;
+                setTimeout(() => {
+                    main.style.filter = darkMode ? "invert(100%)" : "invert(0%)" + " blur(0)";
+                    main.style.opacity = "1";
+                }, 610);
+                window.location.href = 'contact.html';
             }
             setTimeout(() => {
                 main.style.display = "flex";
             }, 600);
-            setTimeout(() => {
-                main.style.filter = "blur(0)";
-                main.style.opacity = "1";
-            }, 610);
             pressed = true;
         }
+
     });
 }
 home_button.addEventListener("click", () => {
@@ -68,34 +79,10 @@ home_button.addEventListener("click", () => {
             section.style.opacity = "0";
             setTimeout(() => {
                 section.style.display = "none";
+                window.location.href = 'index.html';
             }, 600);
         }
     });
     pressed = false;
 });
 
-document
-    .getElementById("contactForm")
-    .addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent default form submission
-
-        // Get form data
-        const formData = new FormData(this);
-
-        // Send form data to PHP script using fetch
-        fetch("send_mail.php", {
-            method: "POST",
-            body: formData,
-        })
-            .then((response) => response.text())
-            .then((data) => {
-                // Show success or error message
-                alert(data);
-            })
-            .catch((error) => {
-                console.error("Error:", error);
-                alert(
-                    "There was a problem sending your message. Please try again."
-                );
-            });
-    });

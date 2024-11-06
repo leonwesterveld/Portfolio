@@ -1,0 +1,76 @@
+{
+    "languages": {
+        "nl": {
+            "home": {
+                "title": "Portfolio Leon Westerveld",
+                "greeting": "Software Ontwikkelaar, UI/UX Designer, Immersive Designer",
+                "projectsButton": "Projecten",
+                "aboutButton": "Over mij",
+                "contactButton": "Contact",
+                "imageAlt": "Mijn afbeelding"
+            },
+            "about": {
+                "title": "Leon Westerveld",
+                "intro": "Hallo! Ik ben Leon Westerveld, een gepassioneerde front-end developer met een voorliefde voor het creëren van creatieve webapplicaties en meeslepende gebruikerservaringen. Met een sterke basis in front-end technologieën breng ik graag creatieve ideeën tot leven door middel van code.",
+                "skillsTitle": "Technische Vaardigheden",
+                "skills": {
+                    "languages": "HTML, CSS, JavaScript, PHP, Python, SQL",
+                    "frameworks": "React, WordPress, Bootstrap, Laravel",
+                    "tools": "Git, Docker, Adobe XD"
+                },
+                "hobbiesTitle": "Hobby's",
+                "hobbies": "Buiten het coderen om hou ik van wandelen, het spelen van videogames en het experimenteren met nieuwe talen en animatie."
+            },
+            "contact": {
+                "title": "Neem contact met me op",
+                "nameLabel": "Naam",
+                "emailLabel": "E-mail",
+                "messageLabel": "Bericht",
+                "submitButton": "Verstuur bericht"
+            },
+            "social": {
+                "followMe": "Volg mij"
+            },
+            "projects": {
+                "title": "Mijn projecten",
+                "description": "Klik op de knoppen in het tabmenu:"
+            }
+        },
+        "en": {
+            "home": {
+                "title": "Portfolio Leon Westerveld",
+                "greeting": "Software Developer, UI/UX Designer, Immersive Designer",
+                "projectsButton": "Projects",
+                "aboutButton": "About me",
+                "contactButton": "Contact",
+                "imageAlt": "My image"
+            },
+            "about": {
+                "title": "Leon Westerveld",
+                "intro": "Hello! I am Leon Westerveld, a passionate front-end developer with a love for creating creative web applications and immersive user experiences. With a strong foundation in front-end technologies, I enjoy bringing creative ideas to life through code.",
+                "skillsTitle": "Technical Skills",
+                "skills": {
+                    "languages": "HTML, CSS, JavaScript, PHP, Python, SQL",
+                    "frameworks": "React, WordPress, Bootstrap, Laravel",
+                    "tools": "Git, Docker, Adobe XD"
+                },
+                "hobbiesTitle": "Hobbies",
+                "hobbies": "Outside of coding, I enjoy walks, playing video games, and experimenting with things like new languages and animation."
+            },
+            "contact": {
+                "title": "Contact me",
+                "nameLabel": "Name",
+                "emailLabel": "Email",
+                "messageLabel": "Message",
+                "submitButton": "Send message"
+            },
+            "social": {
+                "followMe": "Follow me"
+            },
+            "projects": {
+                "title": "My Projects",
+                "description": "Click on the buttons in the tab menu:"
+            }
+        }
+    }
+}
