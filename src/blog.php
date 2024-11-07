@@ -87,6 +87,5 @@ if (isLoggedIn()) {
 } else {
     echo "<p><a href='login.php'>Log in</a> om een reactie te plaatsen.</p>";
 }
-
 ?>
 </main>
