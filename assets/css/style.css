@@ -21,7 +21,6 @@ a {
     cursor: pointer;
 }
 
-
 li {
     list-style: none;
 }
@@ -40,7 +39,7 @@ body {
     transition: background-image 0.2s ease;
 }
 
-button:hover{
+button:hover {
     cursor: pointer;
 }
 
@@ -135,7 +134,8 @@ button:hover{
 
 #contact,
 #about,
-#projects {
+#projects, 
+#blog {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -172,7 +172,7 @@ h2 {
     background-color: #f1f1f1;
 }
 
-.tab:first-child{
+.tab:first-child {
     background: #ccc;
 }
 
@@ -204,7 +204,7 @@ h2 {
     height: 27rem;
 }
 
-.tabcontent:first-of-type{
+.tabcontent:first-of-type {
     display: flex;
     opacity: 1;
 }
@@ -444,6 +444,19 @@ h2 {
     font-weight: 500;
     transition: color 0.3s ease;
 }
+
+/* blog */
+#blog{
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.blog__menu{
+    display: flex;
+    gap: 1rem;
+}
+
 
 /* Mobile Devices (Portrait and smaller than 600px) */
 @media (max-width: 600px) {
