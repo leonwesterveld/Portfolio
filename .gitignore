@@ -1,7 +1,9 @@
-dockerfile
-
 docker-compose.yml
 
 db
 
-src/db.php
+docker
+
+public/db.php
+
+.env

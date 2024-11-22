@@ -1,7 +1,7 @@
 <?php
 session_start();
 require 'auth.php';
-require 'db.php';
+require_once 'config.php';
 
 // Controleer of de gebruiker is ingelogd
 if (!isLoggedIn()) {
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Voeg de reactie toe aan de database
-    $stmt = $db->prepare("INSERT INTO comments (blog_id, user_id, comment) VALUES (?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO comments (blog_id, user_id, comment) VALUES (?, ?, ?)");
     $stmt->bind_param("iis", $blogId, $userId, $commentText);
 
     if ($stmt->execute()) {

@@ -688,3 +688,193 @@ h2 {
         font-size: 2.5rem;
     }
 }
+
+
+
+
+/* Blog overzicht */
+#blog {
+    padding: 2rem;
+    gap: 2rem;
+}
+
+#blog .blog__menu h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.sub-section {
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sub-section h4 a {
+    font-size: 2rem;
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.sub-section h4 a:hover {
+    color: #0056b3;
+}
+
+.sub-section p {
+    margin-top: 0.5rem;
+    color: #555;
+}
+
+.sub-section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Login en registratie pagina's */
+#contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 2rem;
+}
+
+.contact-container {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.contact-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-form label {
+    font-size: 1.6rem;
+    color: #333;
+    text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.4rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+    transition: border 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #007bff;
+    background: #fff;
+    outline: none;
+}
+
+.contact-form button {
+    padding: 1rem;
+    font-size: 1.6rem;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #0056b3;
+}
+
+/* Fout- en succesberichten */
+.contact-container p {
+    font-size: 1.4rem;
+    margin-top: 1rem;
+}
+
+.contact-container p[style*="color: red;"] {
+    color: #ff5252;
+    font-weight: bold;
+}
+
+.contact-container p[style*="color: green;"] {
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* Blog detailpagina */
+article {
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    margin-bottom: 2rem;
+}
+
+article h2 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+article p {
+    margin: 1rem 0;
+    font-size: 1.6rem;
+    color: #555;
+}
+
+/* Reactieformulier */
+section h3 {
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+section form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+section form textarea {
+    height: 120px;
+    font-size: 1.4rem;
+}
+
+/* Mobielvriendelijke aanpassingen */
+@media (max-width: 768px) {
+    #blog, .contact-container {
+        padding: 1.5rem;
+    }
+
+    .sub-section {
+        padding: 1rem;
+    }
+
+    .contact-container h2 {
+        font-size: 2rem;
+    }
+
+    .contact-form input,
+    .contact-form button {
+        font-size: 1.4rem;
+    }
+}

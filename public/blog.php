@@ -1,6 +1,7 @@
 <?php
+session_start();
 require 'auth.php';
-require 'db.php';
+require_once 'config.php';
 require 'header.php';
 
 // Controleer of een blog-ID is opgegeven in de URL
@@ -10,21 +11,10 @@ if (!isset($_GET['id'])) {
 }
 
 $blogId = $_GET['id'];
-?>
-<main id="blog" class="invert">
-    <div class="blog__menu">
-        <a class="hover" href="index.php">Blogs</a>
-        <?php if (isLoggedIn()): ?>
-            <a class="hover" href="logout.php"><i class="fa-regular fa-user"></i></a>
-        <?php else: ?>
-            <a class="hover" href="login.php"><i class="fa-solid fa-user"></i></a>
-        <?php endif; ?>
-        <a class="hover" href="registration.php">registration</a>
-    </div>
-<?php
+
 
 // Haal het blogbericht op uit de database
-$stmt = $db->prepare("SELECT title, date, content, category FROM blogs WHERE id = ?");
+$stmt = $conn->prepare("SELECT title, date, content, category FROM blogs WHERE id = ?");
 $stmt->bind_param("i", $blogId);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -40,13 +30,13 @@ if (!$blog) {
 // Toon het blogbericht
 echo "<article>";
 echo "<h2>{$blog['title']}</h2>";
-echo "<p><small>{$blog['category']}</small></p>";
-echo "<p><small>{$blog['date']}</small></p>";
+echo "<p><small>Datum: {$blog['date']}</small></p>";
+echo "<p><small>Categorie: {$blog['category']}</small></p>";
 echo "<div>{$blog['content']}</div>";
 echo "</article>";
 
 // Haal de bijbehorende commentaren op
-$stmt = $db->prepare("SELECT comments.comment, comments.date, users.username 
+$stmt = $conn->prepare("SELECT comments.comment, comments.date, users.username 
                       FROM comments 
                       JOIN users ON comments.user_id = users.id 
                       WHERE comments.blog_id = ? 
@@ -87,5 +77,6 @@ if (isLoggedIn()) {
 } else {
     echo "<p><a href='login.php'>Log in</a> om een reactie te plaatsen.</p>";
 }
+
 ?>
 </main>

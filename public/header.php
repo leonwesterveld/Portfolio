@@ -22,3 +22,13 @@ require_once 'auth.php';
         <button class="hover invert" id="darkmode">☼</button>
         <button class="hover invert" id="home">🏠︎</button>
     </header>
+<main id="blog" class="invert">
+    <div class="blog__menu">
+        <a class="hover" href="index.php">Blogs</a>
+        <?php if (isLoggedIn()): ?>
+            <a class="hover" href="logout.php"><i class="fa-regular fa-user"></i></a>
+        <?php else: ?>
+            <a class="hover" href="login.php"><i class="fa-solid fa-user"></i></a>
+        <?php endif; ?>
+        <a class="hover" href="registration.php">registration</a>
+    </div>

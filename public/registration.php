@@ -1,22 +1,11 @@
 <?php
-require 'db.php';
+session_start();
+require_once 'config.php';
 require 'header.php';
 
 $error = '';
 $success = '';
 
-?>
-<main id="blog" class="invert">
-    <div class="blog__menu">
-        <a class="hover" href="index.php">Blogs</a>
-        <?php if (isLoggedIn()): ?>
-            <a class="hover" href="logout.php"><i class="fa-regular fa-user"></i></a>
-        <?php else: ?>
-            <a class="hover" href="login.php"><i class="fa-solid fa-user"></i></a>
-        <?php endif; ?>
-        <a class="hover" href="registration.php">registration</a>
-    </div>
-<?php
 
 // Controleer of het formulier is ingediend
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -31,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = 'De wachtwoorden komen niet overeen.';
     } else {
         // Controleer of de gebruikersnaam al bestaat
-        $stmt = $db->prepare("SELECT id FROM users WHERE username = ?");
+        $stmt = $conn->prepare("SELECT id FROM users WHERE username = ?");
         $stmt->bind_param("s", $username);
         $stmt->execute();
         $stmt->store_result();
@@ -43,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $passwordHash = password_hash($password, PASSWORD_DEFAULT);
             $role = 'user';  // Standaard rol voor nieuwe gebruikers
 
-            $stmt = $db->prepare("INSERT INTO users (username, password_hash, role) VALUES (?, ?, ?)");
+            $stmt = $conn->prepare("INSERT INTO users (username, password_hash, role) VALUES (?, ?, ?)");
             $stmt->bind_param("sss", $username, $passwordHash, $role);
 
             if ($stmt->execute()) {

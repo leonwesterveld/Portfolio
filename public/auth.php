@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 function isLoggedIn() {
     return isset($_SESSION['user_id']);
@@ -7,7 +6,7 @@ function isLoggedIn() {
 
 function restrictAccess() {
     if (!isLoggedIn()) {
-        header("Location: index.php");
+        header("Location: login.php");
         exit();
     }
 }
