@@ -6,34 +6,32 @@ require 'header.php';
 $error = '';
 $success = '';
 
-
-// Controleer of het formulier is ingediend
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username']);
+    $email = trim($_POST['email']);
     $password = trim($_POST['password']);
     $confirmPassword = trim($_POST['confirm_password']);
 
-    // Validatie van gebruikersnaam en wachtwoord
-    if (empty($username) || empty($password) || empty($confirmPassword)) {
+    if (empty($username) || empty($email) || empty($password) || empty($confirmPassword)) {
         $error = 'Vul alle velden in.';
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error = 'Ongeldig e-mailadres.';
     } elseif ($password !== $confirmPassword) {
         $error = 'De wachtwoorden komen niet overeen.';
     } else {
-        // Controleer of de gebruikersnaam al bestaat
-        $stmt = $conn->prepare("SELECT id FROM users WHERE username = ?");
-        $stmt->bind_param("s", $username);
+        $stmt = $conn->prepare("SELECT id FROM users WHERE username = ? OR email = ?");
+        $stmt->bind_param("ss", $username, $email);
         $stmt->execute();
         $stmt->store_result();
 
         if ($stmt->num_rows > 0) {
-            $error = 'Gebruikersnaam bestaat al. Kies een andere naam.';
+            $error = 'Gebruikersnaam of e-mailadres bestaat al. Kies een andere.';
         } else {
-            // Voeg de nieuwe gebruiker toe aan de database
             $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-            $role = 'user';  // Standaard rol voor nieuwe gebruikers
+            $role = 'user';
 
-            $stmt = $conn->prepare("INSERT INTO users (username, password_hash, role) VALUES (?, ?, ?)");
-            $stmt->bind_param("sss", $username, $passwordHash, $role);
+            $stmt = $conn->prepare("INSERT INTO users (username, email, password_hash, role) VALUES (?, ?, ?, ?)");
+            $stmt->bind_param("ssss", $username, $email, $passwordHash, $role);
 
             if ($stmt->execute()) {
                 $success = 'Registratie geslaagd! Je kunt nu <a href="login.php">inloggen</a>.';
@@ -44,22 +42,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->close();
     }
 }
-
 ?>
 
 <h2>Registreren</h2>
-
-<!-- Toon foutmelding of succesbericht indien aanwezig -->
 <?php if ($error): ?>
     <p style="color: red;"><?php echo $error; ?></p>
 <?php elseif ($success): ?>
     <p style="color: green;"><?php echo $success; ?></p>
 <?php endif; ?>
 
-<!-- Registratieformulier -->
 <form action="registration.php" method="post">
     <label for="username">Gebruikersnaam:</label>
     <input type="text" id="username" name="username" required>
+
+    <label for="email">E-mailadres:</label>
+    <input type="email" id="email" name="email" required>
 
     <label for="password">Wachtwoord:</label>
     <input type="password" id="password" name="password" required>
@@ -69,4 +66,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <button type="submit">Registreren</button>
 </form>
-

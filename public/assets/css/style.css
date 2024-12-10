@@ -390,6 +390,7 @@ h2 {
     transform: translateX(-50%);
     transition: width 0.4s ease;
     font-weight: 500;
+    position: absolute;
 }
 
 #about h2:hover::after {
@@ -792,7 +793,7 @@ h2 {
 .contact-form button {
     padding: 1rem;
     font-size: 1.6rem;
-    background: #007bff;
+    background: #ff3333;
     color: #fff;
     border: none;
     border-radius: 8px;
