@@ -6,7 +6,7 @@ require 'header.php';
 
 // Controleer of een blog-ID is opgegeven in de URL
 if (!isset($_GET['id'])) {
-    header("Location: index.php");
+    header("Location: inlog.php");
     exit();
 }
 
@@ -28,10 +28,9 @@ if (!$blog) {
 }
 
 // Toon het blogbericht
-echo "<article>";
+echo "<article class='blogName'>";
 echo "<h2>{$blog['title']}</h2>";
 echo "<p><small>Datum: {$blog['date']}</small></p>";
-echo "<p><small>Categorie: {$blog['category']}</small></p>";
 echo "<div>{$blog['content']}</div>";
 echo "</article>";
 
@@ -47,7 +46,7 @@ $comments = $stmt->get_result();
 $stmt->close();
 
 // Toon de commentaren
-echo "<section>";
+echo "<section class='commentContainer'>";
 echo "<h3>Reacties</h3>";
 
 if ($comments->num_rows > 0) {
@@ -55,7 +54,6 @@ if ($comments->num_rows > 0) {
         echo "<div class='comment'>";
         echo "<p><strong>{$comment['username']}</strong> zei:</p>";
         echo "<p>{$comment['comment']}</p>";
-        echo "<small>{$comment['date']}</small>";
         echo "</div>";
     }
 } else {
@@ -67,10 +65,9 @@ echo "</section>";
 if (isLoggedIn()) {
     echo "<section>";
     echo "<h3>Plaats een reactie</h3>";
-    echo "<form action='comment.php' method='post'>";
+    echo "<form class='blogForm' action='comment.php' method='post'>";
     echo "<input type='hidden' name='blog_id' value='$blogId'>";
-    echo "<label for='comment'>Reactie:</label>";
-    echo "<textarea id='comment' name='comment' required></textarea>";
+    echo "<textarea class='reactie' id='comment' name='comment' required></textarea>";
     echo "<button type='submit'>Reactie plaatsen</button>";
     echo "</form>";
     echo "</section>";
@@ -79,4 +76,5 @@ if (isLoggedIn()) {
 }
 
 ?>
+    </section>
 </main>

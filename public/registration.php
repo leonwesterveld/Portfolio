@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <p style="color: green;"><?php echo $success; ?></p>
 <?php endif; ?>
 
-<form action="registration.php" method="post">
+<form class="blogForm" action="registration.php" method="post">
     <label for="username">Gebruikersnaam:</label>
     <input type="text" id="username" name="username" required>
 
@@ -66,3 +66,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <button type="submit">Registreren</button>
 </form>
+
+</section>

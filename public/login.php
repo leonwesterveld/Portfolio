@@ -6,11 +6,11 @@ $error = '';
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = $_POST['username'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
     
-    $stmt = $conn->prepare("SELECT id, password_hash, role FROM users WHERE username = ?");
-    $stmt->bind_param("s", $username);
+    $stmt = $conn->prepare("SELECT id, password_hash, role FROM users WHERE email = ?");
+    $stmt->bind_param("s", $email);
     $stmt->execute();
     $stmt->store_result();
     
@@ -20,9 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         if (password_verify($password, $passwordHash)) {
             $_SESSION['user_id'] = $userId;
-            $_SESSION['username'] = $username;
+            $_SESSION['email'] = $email;
             $_SESSION['role'] = $role;
-            header("Location: index.php");
+            header("Location: inlog.php");
             exit();
         } else {
             $error = 'Ongeldig wachtwoord.';
@@ -44,14 +44,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <p style="color: red;"><?php echo $error; ?></p>
     <?php endif; ?>
     
-    <form action="login.php" method="post">
-        <label for="username">Gebruikersnaam:</label>
-        <input type="text" id="username" name="username" required>
+    <form class="blogForm" action="login.php" method="post">
+        <label for="email">E-mail:</label>
+        <input type="text" id="email" name="email" required>
         
         <label for="password">Wachtwoord:</label>
         <input type="password" id="password" name="password" required>
         
         <button type="submit">Inloggen</button>
     </form>
+    </section>
     
     

@@ -36,7 +36,7 @@ for (let i = 0; i < knop.length; i++) {
                 window.location.href = 'contact.html';
             } else if (knop[i] === button__blog) {
                 main = blog;
-                window.location.href = 'index.php';
+                window.location.href = 'inlog.php';
             }
             pressed = true;
         }
