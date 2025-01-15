@@ -16,8 +16,8 @@ require_once 'auth.php';
 
 <body>
     <header class="menu">
-        <button class="hover" id="darkmode">☼</button>
-        <a href="../index.html" class="hover" id="home">🏠︎</a>
+        <button class="menu__button" id="darkmode">☼</button>
+        <a href="index.html" class="menu__button" id="home">🏠︎</a>
     </header>
 <main id="blog" class="invert">
     <section class="blog__section">
