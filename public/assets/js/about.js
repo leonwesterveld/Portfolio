@@ -1,9 +1,7 @@
 function updateContent(content) {
-    // About Section - Title and Intro
     document.querySelector("#about h2").textContent = content.about.title;
     document.querySelector("#about p").textContent = content.about.intro;
 
-    // Skills Section
     const skillsSection = document.querySelector(".skills");
     skillsSection.innerHTML = `
         <h3>${content.about.skillsTitle}</h3>
@@ -14,7 +12,6 @@ function updateContent(content) {
         </ul>
     `;
 
-    // Hobbies Section
     const hobbiesSection = document.querySelector(".hobbies");
     hobbiesSection.innerHTML = `
         <h3>${content.about.hobbiesTitle}</h3>

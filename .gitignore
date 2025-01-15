@@ -4,6 +4,6 @@ db
 
 docker
 
-public/db.php
+public/blog/db.php
 
 .env

@@ -7,17 +7,17 @@
     <title>Portfolio Leon Westerveld</title>
     <link rel="stylesheet" href="assets/css/style.css" />
     <script src="assets/js/main.js" defer></script>
-    <script src="assets/js/tabs.js" defer></script>
-    <script src="assets/js/modes.js" defer></script>
+    <script src="assets/js/darkmode.js" defer></script>
+    <script src="assets/js/language.js" defer></script>
     <script src="assets/js/index.js" defer></script>
     <link rel="preload" href="assets/img/tekst.png" as="image" />
 </head>
 
 <body>
     <header class="menu">
-        <button class="hover invert" id="taal">NE</button>
-        <button class="hover invert" id="darkmode">☼</button>
-        <button class="hover invert" id="home">🏠︎</button>
+        <button class="hover" id="taal">NE</button>
+        <button class="hover" id="darkmode">☼</button>
+        <a href="index.html" class="hover" id="home">🏠︎</a>
     </header>
     <main id="homepage" class="invert">
         <img id="naam" class="naam" src="assets/img/tekst.gif" alt="My Image" href="wikipedia.com" />
@@ -25,23 +25,21 @@
             <p class="info">
                 Software developer, UI/XD Designer, Immersive Designer
             </p>
+            <h1 id="greeting"></h1>
         </div>
         <div class="text">
-            <button id="button__projects" class="info hover bottom knop">
+            <a id="button__projects" href="projects.html" class="info hover bottom knop">
                 Projects
-            </button>
-            <span class="info">, </span>
-            <button id="button__about" class="info hover bottom knop">
+            </a>
+            <a id="button__about" href="about.html" class="info hover bottom knop">
                 About me
-            </button>
-            <span class="info">, </span>
-            <button id="button__contact" class="info hover bottom knop">
+            </a>
+            <a id="button__contact" href="contact.html" class="info hover bottom knop">
                 Contact me
-            </button>
-            <span class="info">, </span>
-            <button id="button__blog" class="info hover bottom knop">
+            </a>
+            <a id="button__blog" href="blog/login.php" class="info hover bottom knop">
                 blog
-            </button>
+            </a>
         </div>
     </main>
 </body>

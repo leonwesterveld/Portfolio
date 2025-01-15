@@ -1,5 +1,4 @@
 function updateContent(content) {
-    // Home Section
     document.title = content.home.title;
     document.querySelector("#naam").alt = content.home.imageAlt;
     document.querySelector(".info").textContent = content.home.greeting;
@@ -9,5 +8,4 @@ function updateContent(content) {
         content.home.aboutButton;
     document.querySelector("#button__contact").textContent =
         content.home.contactButton;
-
 }

@@ -2,47 +2,47 @@
     "tabs": [
         {
             "id": "css_learn",
-            "title": "CSS Leren",
+            "titleNL": "CSS Leren",
             "titleEN": "Learning CSS",
             "content": [
                 {
                     "subtitle": "Pikmin",
-                    "text": "Dit is de eerste website die ik heb gemaakt met behulp van de uitleg van mijn docenten. Het was een goede manier om CSS te leren.",
+                    "textNL": "Dit is de eerste website die ik heb gemaakt met behulp van de uitleg van mijn docenten. Het was een goede manier om CSS te leren.",
                     "textEN": "This is the first website I created with the help of my teachers. It was a great way to learn CSS.",
                     "image": "./assets/projects/pikmin.png",
                     "href": "./projects/pikmin"
                 },
                 {
                     "subtitle": "Flexbox Layout",
-                    "text": "In dit project leerde ik de kracht van Flexbox voor het maken van flexibele, responsive layouts.",
+                    "textNL": "In dit project leerde ik de kracht van Flexbox voor het maken van flexibele, responsive layouts.",
                     "textEN": "In this project, I learned the power of Flexbox for creating flexible, responsive layouts.",
                     "image": "./assets/projects/flexbox.png",
                     "href": "./projects/flexbox"
                 },
                 {
                     "subtitle": "Tulpreizen",
-                    "text": "Een eenvoudige landing page voor een fictief reisbureau, met een focus op visuele aantrekkelijkheid en CSS grid.",
+                    "textNL": "Een eenvoudige landing page voor een fictief reisbureau, met een focus op visuele aantrekkelijkheid en CSS grid.",
                     "textEN": "A simple landing page for a fictional travel agency, focusing on visual appeal and CSS grid.",
                     "image": "./assets/projects/tulpreizen.png",
                     "href": "./projects/tulpreizen"
                 },
                 {
                     "subtitle": "CSS Animatie",
-                    "text": "In dit project experimenteerde ik met CSS-animaties om interactieve visuele effecten te creëren.",
+                    "textNL": "In dit project experimenteerde ik met CSS-animaties om interactieve visuele effecten te creëren.",
                     "textEN": "In this project, I experimented with CSS animations to create interactive visual effects.",
                     "image": "./assets/projects/animatie.png",
                     "href": "./projects/animatie"
                 },
                 {
                     "subtitle": "CSS Filter",
-                    "text": "Een demonstratie van verschillende filtereffecten die je met CSS kunt bereiken, zoals blur en grayscale.",
+                    "textNL": "Een demonstratie van verschillende filtereffecten die je met CSS kunt bereiken, zoals blur en grayscale.",
                     "textEN": "A demonstration of various filter effects you can achieve with CSS, such as blur and grayscale.",
                     "image": "./assets/projects/filter.png",
                     "href": "./projects/filter"
                 },
                 {
                     "subtitle": "Neon Header",
-                    "text": "Een opvallende koptekst gemaakt met neon-stijl tekst en schaduweffecten, geïnspireerd door moderne webdesign trends.",
+                    "textNL": "Een opvallende koptekst gemaakt met neon-stijl tekst en schaduweffecten, geïnspireerd door moderne webdesign trends.",
                     "textEN": "A striking header made with neon-style text and shadow effects, inspired by modern web design trends.",
                     "image": "./assets/projects/neonHeader.png",
                     "href": "./projects/neonHeader"
@@ -51,40 +51,40 @@
         },
         {
             "id": "css_practice",
-            "title": "CSS Projecten",
+            "titleNL": "CSS Projecten",
             "titleEN": "CSS Projects",
             "content": [
                 {
                     "subtitle": "NOS",
-                    "text": "Een kloon van de NOS website met een focus CSS in een korte tijd.",
+                    "textNL": "Een kloon van de NOS website met een focus CSS in een korte tijd.",
                     "textEN": "A clone of the NOS news website, focusing on CSS made in a short time",
                     "image": "./assets/projects/nos.png",
                     "href": "./projects/nos"
                 },
                 {
                     "subtitle": "Game Museum",
-                    "text": "Een website gemaakt voor een game museum met interactieve functies en een uniek layoutontwerp. Dit was mijn eerste echte website gemaakt.",
+                    "textNL": "Een website gemaakt voor een game museum met interactieve functies en een uniek layoutontwerp. Dit was mijn eerste echte website gemaakt.",
                     "textEN": "A website created for a game museum featuring interactive elements and a unique layout design. This was my first ever made website",
                     "image": "./assets/projects/gameMuseum.png",
                     "href": "./projects/gameMuseum"
                 },
                 {
                     "subtitle": "Fluunk",
-                    "text": "Een professionele productpagina voor een fictief merk, gericht op het maken van een dashboard voor een duurzaam huis.",
+                    "textNL": "Een professionele productpagina voor een fictief merk, gericht op het maken van een dashboard voor een duurzaam huis.",
                     "textEN": "A professional product landing page for a fictional brand, aimed at creating a dashboard for a sustainable home.",
                     "image": "./assets/projects/fluunk.png",
                     "href": "./projects/fluunk"
                 },
                 {
                     "subtitle": "Banky",
-                    "text": "Een mock-up van een financiële website met een strak en professioneel ontwerp, waarbij CSS-grid en animaties zijn toegepast.",
+                    "textNL": "Een mock-up van een financiële website met een strak en professioneel ontwerp, waarbij CSS-grid en animaties zijn toegepast.",
                     "textEN": "A mock-up of a financial website with a clean and professional design, using CSS grid and animations.",
                     "image": "./assets/projects/banky.png",
                     "href": "./projects/banky"
                 },
                 {
                     "subtitle": "Fonts",
-                    "text": "Een project gericht op het gebruik van verschillende lettertypen.",
+                    "textNL": "Een project gericht op het gebruik van verschillende lettertypen.",
                     "textEN": "A project focused on using different fonts.",
                     "image": "./assets/projects/fonts.png",
                     "href": "./projects/fonts"
@@ -93,47 +93,47 @@
         },
         {
             "id": "js_learn",
-            "title": "JS Functies",
+            "titleNL": "JS Functies",
             "titleEN": "JS Functions",
             "content": [
                 {
                     "subtitle": "Review Scroller",
-                    "text": "Ik leerde hoe ik een dynamische review scroller kan maken die gebruiksvriendelijk en interactief is.",
+                    "textNL": "Ik leerde hoe ik een dynamische review scroller kan maken die gebruiksvriendelijk en interactief is.",
                     "textEN": "I learned how to make a dynamic review scroller that is user-friendly and interactive.",
                     "image": "./assets/projects/reviews.png",
                     "href": "./projects/reviews"
                 },
                 {
                     "subtitle": "Camera Integratie",
-                    "text": "In dit project leerde ik hoe je een camera kunt integreren op een website met JavaScript.",
+                    "textNL": "In dit project leerde ik hoe je een camera kunt integreren op een website met JavaScript.",
                     "textEN": "In this project, I learned how to integrate a camera into a website using JavaScript.",
                     "image": "./assets/projects/camera.png",
                     "href": "./projects/camera"
                 },
                 {
                     "subtitle": "Dark Mode",
-                    "text": "Hier leerde ik hoe je een darkmode toggle kan implementeren die de gebruikerservaring verbeterd.",
+                    "textNL": "Hier leerde ik hoe je een darkmode toggle kan implementeren die de gebruikerservaring verbeterd.",
                     "textEN": "Here I learned how to implement a dark mode toggle that improves user experience.",
                     "image": "./assets/projects/darkmode.png",
                     "href": "./projects/darkmode"
                 },
                 {
                     "subtitle": "Modal Vensters",
-                    "text": "Een tutorial over het maken van modale vensters met JavaScript.",
+                    "textNL": "Een tutorial over het maken van modale vensters met JavaScript.",
                     "textEN": "A tutorial on creating modal windows using JavaScript.",
                     "image": "./assets/projects/modal.png",
                     "href": "./projects/modal"
                 },
                 {
                     "subtitle": "Color Picker",
-                    "text": "Ik leerde hoe ik een kleurmenu kon maken met JavaScript met random kleuren.",
+                    "textNL": "Ik leerde hoe ik een kleurmenu kon maken met JavaScript met random kleuren.",
                     "textEN": "I learned how to create a color picker using JavaScript with random colors.",
                     "image": "./assets/projects/colorpicker.png",
                     "href": "./projects/colorpicker"
                 },
                 {
                     "subtitle": "Winkelwagen",
-                    "text": "Hier leerde ik hoe je een winkelwagen functionaliteit kunt maken en de observer functie met behulp van JavaScript.",
+                    "textNL": "Hier leerde ik hoe je een winkelwagen functionaliteit kunt maken en de observer functie met behulp van JavaScript.",
                     "textEN": "Here I learned how to build shopping cart functionality and observer function using JavaScript.",
                     "image": "./assets/projects/shoppingCard.png",
                     "href": "./projects/shoppingCard"
@@ -142,33 +142,33 @@
         },
         {
             "id": "js_practice",
-            "title": "JS projecten",
+            "titleNL": "JS projecten",
             "titleEN": "JS Projects",
             "content": [
                 {
                     "subtitle": "HEMA Kloon",
-                    "text": "Een opdracht waarbij ik een webshop kloon van de HEMA maakte, met mijn eigen keuzen in producten.",
+                    "textNL": "Een opdracht waarbij ik een webshop kloon van de HEMA maakte, met mijn eigen keuzen in producten.",
                     "textEN": "An assignment where I created a webshop clone of HEMA, adding my own twist with different products.",
                     "image": "./assets/projects/hema.png",
                     "href": "./projects/hema"
                 },
                 {
                     "subtitle": "Muse",
-                    "text": "Samenwerking met game-artists waarbij we 3D-modellen integreerden in een interactieve website.",
+                    "textNL": "Samenwerking met game-artists waarbij we 3D-modellen integreerden in een interactieve website.",
                     "textEN": "Collaboration with game artists where we integrated 3D models into an interactive website.",
                     "image": "./assets/projects/muse.png",
                     "href": "./projects/muse"
                 },
                 {
                     "subtitle": "Infinite Scroller",
-                    "text": "Een eindeloze scroller met willekeurige berichten, geïnspireerd door Spotify en de kleuren van Twitch.",
+                    "textNL": "Een eindeloze scroller met willekeurige berichten, geïnspireerd door Spotify en de kleuren van Twitch.",
                     "textEN": "An infinite scroller with random posts, inspired by Spotify and the colors of Twitch.",
                     "image": "./assets/projects/scroller.png",
                     "href": "./projects/scroller"
                 },
                 {
                     "subtitle": "Kalender",
-                    "text": "Een kalender die werkt.",
+                    "textNL": "Een kalender die werkt.",
                     "textEN": "A calendar that works",
                     "image": "./assets/projects/kalender.png",
                     "href": "./projects/kalender"
@@ -177,12 +177,12 @@
         },
         {
             "id": "php",
-            "title": "PHP",
+            "titleNL": "PHP",
             "titleEN": "PHP",
             "content": [
                 {
                     "subtitle": "SDG Games",
-                    "text": "Een website gebouwd voor de SDG-games, waarin ik leerde om gegevens uit een database met PHP op te halen en weer te geven.",
+                    "textNL": "Een website gebouwd voor de SDG-games, waarin ik leerde om gegevens uit een database met PHP op te halen en weer te geven.",
                     "textEN": "A website built for the SDG games, where I learned how to retrieve and display data from a database using PHP.",
                     "image": "./assets/projects/SEARN.png",
                     "href": "./projects/SEARN"
