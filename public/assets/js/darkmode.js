@@ -1,4 +1,4 @@
-
+//darkmode
 const dark = document.getElementById("darkmode");
 let darkMode = localStorage.getItem("darkMode") === "true";
 
@@ -79,6 +79,38 @@ if (window.matchMedia) {
             updateColorScheme();
         }
     });
+}
+
+//language
+let taalChange = document.getElementById("taal")
+if (taalChange) {
+    let language = localStorage.getItem("language") || "en";
+
+    async function loadTranslationsAndUpdate(lang) {
+        try {
+            const response = await fetch('../assets/json/content.json');
+            const data = await response.json();
+            updateContent(data.languages[lang]);
+            taalChange.innerText = lang === "en" ? "EN" : "NL";
+        } catch (error) {
+            console.error("Fout bij het laden van de vertalingen:", error);
+        }
+    }
+
+    function setLanguage(lang) {
+        language = lang;
+        localStorage.setItem("language", lang);
+        const tabs = document.getElementById("projects");
+        if (tabs)createTabs(lang);
+        loadTranslationsAndUpdate(lang);
+    }
+
+    taalChange.addEventListener("click", () => {
+        const newLang = language === "en" ? "nl" : "en";
+        setLanguage(newLang);
+    });
+
+loadTranslationsAndUpdate(language);
 }
 
 updateColorScheme();
